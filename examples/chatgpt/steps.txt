@@ -1,0 +1,5 @@
+chatgpt.com/plugins → + → Add custom MCP server
+Name: SocialTap
+Server URL: https://socialtap.dev/mcp
+Authentication: OAuth
+Create, install it, then pick it with @ in a chat.

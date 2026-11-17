@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "socialtap": {
+      "httpUrl": "https://socialtap.dev/mcp"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+Customize → Connectors → + Add → Add custom connector
+Name: SocialTap
+Remote MCP server URL: https://socialtap.dev/mcp
+Continue, choose "Sign in now", then Add.

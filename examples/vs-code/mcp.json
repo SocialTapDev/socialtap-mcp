@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "socialtap": {
+      "type": "http",
+      "url": "https://socialtap.dev/mcp"
+    }
+  }
+}
