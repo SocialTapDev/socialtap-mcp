@@ -1,6 +1,6 @@
 # SocialTap MCP Server
 
-Live public social media data for Claude, ChatGPT, Cursor and any MCP client: posts, profiles, comments and transcripts from LinkedIn, Reddit, X (Twitter), Instagram, YouTube, TikTok, Facebook and 23 more platforms, read when your agent asks.
+Live public social media data for Claude, ChatGPT, Cursor and any MCP client: posts, profiles, comments and transcripts from LinkedIn, Reddit, X (Twitter), Instagram, YouTube, TikTok, Facebook and 28 more platforms, read when your agent asks.
 
 - **Server URL:** `https://socialtap.dev/mcp` (remote, Streamable HTTP). Nothing to install or run.
 - **Sign-in:** your client opens a browser the first time (OAuth). No key in a config file, and no login to any social platform.

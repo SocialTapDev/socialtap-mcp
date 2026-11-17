@@ -9,6 +9,22 @@
     "url": "https://github.com/SocialTapDev/socialtap-mcp",
     "source": "github"
   },
+  "icons": [
+    {
+      "src": "https://socialtap.dev/logo.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": [
+        "any"
+      ]
+    },
+    {
+      "src": "https://socialtap.dev/apple-touch-icon.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "180x180"
+      ]
+    }
+  ],
   "remotes": [
     {
       "type": "streamable-http",
