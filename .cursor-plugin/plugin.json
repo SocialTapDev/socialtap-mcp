@@ -1,0 +1,37 @@
+{
+  "name": "socialtap",
+  "displayName": "SocialTap",
+  "version": "1.1805.0",
+  "description": "Live public social media data in Cursor and Grok Bot: posts, profiles, comments, transcripts and ads from LinkedIn, Reddit, X (Twitter), Instagram, YouTube, TikTok, Facebook and 23 more platforms, in one schema. Runs on the hosted SocialTap MCP server with browser sign-in: no API key to paste.",
+  "author": {
+    "name": "SocialTap",
+    "email": "support@socialtap.dev"
+  },
+  "homepage": "https://socialtap.dev/mcp/",
+  "repository": "https://github.com/SocialTapDev/socialtap-mcp",
+  "license": "MIT",
+  "logo": "assets/logo.svg",
+  "keywords": [
+    "socialtap",
+    "social-media",
+    "social-media-api",
+    "linkedin",
+    "reddit",
+    "x",
+    "instagram",
+    "youtube",
+    "tiktok",
+    "facebook",
+    "transcripts",
+    "comments",
+    "mcp"
+  ],
+  "category": "data-analytics",
+  "tags": [
+    "social-media",
+    "research",
+    "marketing",
+    "mcp"
+  ],
+  "mcpServers": "./mcp.json"
+}

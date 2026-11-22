@@ -165,7 +165,7 @@ What a client lists by default:
 | `get_profile` | Public accounts (creators, channels, pages, companies, communities) with their bio, links, and follower and post counts. |
 | `list_comments` | The comments of a post, a page per call: public comments and replies with their author, text, place in the thread, and like and reply counts. |
 | `get_transcript` | Timed transcripts of public videos: the platform's caption track, or speech-to-text on the audio when there is none and you ask for it. |
-| `get_engagement` | Engagement rate, average views, likes and comments, posting cadence and top post for an account, computed from its recent posts the same way on every platform. |
+| `get_engagement` | Engagement rate, average views, likes and comments, posting cadence and top post of an account, computed from recent posts the same way on every platform. |
 | `search` | Search a platform by query for ads, advertisers, albums, channels, comments, communities, events, groups, hashtags, issues, jobs, places, playlists, podcasts, posts, products, profiles, repositories, sounds, suggestions or top. |
 | `call_endpoint` | Call any endpoint by the ID find_endpoint gives (tiktok.sound_posts), with the arguments it gives: the data the other tools here don't cover. |
 | `search_docs` | Search the SocialTap docs (guides, the API reference, error codes, schemas, pricing) for a question or term: returns the best-matching sections with their page, a snippet and the path to read with read_doc. |
