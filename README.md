@@ -1,6 +1,6 @@
 # SocialTap MCP Server
 
-Live public social media data for Claude, ChatGPT, Cursor and any MCP client: posts, profiles, comments and transcripts from LinkedIn, Reddit, X (Twitter), Instagram, YouTube, TikTok, Facebook and 28 more platforms, read when your agent asks.
+Live public social media data for Claude Code, Codex, Cursor, Grok, Claude, ChatGPT and any MCP client: posts, profiles, comments and transcripts from LinkedIn, Reddit, X (Twitter), Instagram, YouTube, TikTok, Facebook and 28 more platforms, read when your agent asks.
 
 - **Server URL:** `https://socialtap.dev/mcp` (remote, Streamable HTTP). Nothing to install or run.
 - **Sign-in:** your client opens a browser the first time (OAuth). No key in a config file, and no login to any social platform.
@@ -9,15 +9,15 @@ Live public social media data for Claude, ChatGPT, Cursor and any MCP client: po
 
 ## Connect
 
+Paste this into any agent and it sets itself up: `Read https://socialtap.dev/setup.md (with curl if you can run commands) and follow it to set up SocialTap for me.`
+
 ### Claude Code
 
 ```shell
-claude mcp add --transport http socialtap https://socialtap.dev/mcp
+claude mcp add --transport http --scope user socialtap https://socialtap.dev/mcp
 ```
 
 ([examples/claude-code/add.sh](examples/claude-code/add.sh))
-
-### Claude Code (.mcp.json)
 
 ```json
 {
@@ -32,18 +32,27 @@ claude mcp add --transport http socialtap https://socialtap.dev/mcp
 
 ([examples/claude-code/.mcp.json](examples/claude-code/.mcp.json))
 
-### Claude Desktop and claude.ai
+Sign in: `claude mcp login socialtap` opens your browser (or run `/mcp`, choose `socialtap` and Authenticate). Until then its tools answer that you need to sign in.
 
+### Codex
+
+```shell
+codex mcp add socialtap --url https://socialtap.dev/mcp
+codex mcp login socialtap
 ```
-Customize → Connectors → + Add → Add custom connector
-Name: SocialTap
-Remote MCP server URL: https://socialtap.dev/mcp
-Continue, choose "Sign in now", then Add.
+
+([examples/codex/add.sh](examples/codex/add.sh))
+
+```toml
+[mcp_servers.socialtap]
+url = "https://socialtap.dev/mcp"
 ```
 
-([examples/claude-desktop-and-claude-ai/steps.txt](examples/claude-desktop-and-claude-ai/steps.txt))
+([examples/codex/config.toml](examples/codex/config.toml))
 
-### Cursor (mcp.json)
+Sign in: `codex mcp login socialtap` opens your browser.
+
+### Cursor
 
 ```json
 {
@@ -57,7 +66,116 @@ Continue, choose "Sign in now", then Add.
 
 ([examples/cursor/mcp.json](examples/cursor/mcp.json))
 
-### VS Code (mcp.json)
+Sign in: sign in from the server's entry in Cursor Settings. Your browser opens.
+
+### Grok Build
+
+```shell
+grok mcp add --transport http socialtap https://socialtap.dev/mcp
+```
+
+([examples/grok-build/add.sh](examples/grok-build/add.sh))
+
+```toml
+[mcp_servers.socialtap]
+url = "https://socialtap.dev/mcp"
+```
+
+([examples/grok-build/config.toml](examples/grok-build/config.toml))
+
+Sign in: run `/mcps`, select `socialtap` and press `i` to authenticate. Your browser opens.
+
+### Claude (claude.ai and Desktop)
+
+```
+Customize → Connectors → + Add → Add custom connector
+Name: SocialTap
+Remote MCP server URL: https://socialtap.dev/mcp
+Continue, choose "Sign in now", then Add.
+```
+
+([examples/claude-claude-ai-and-desktop/steps.txt](examples/claude-claude-ai-and-desktop/steps.txt))
+
+Sign in: choose Sign in now when you add the connector. On Team and Enterprise plans an owner adds it under Organization settings → Connectors (Add → Custom → Web), then each member clicks Connect under Customize → Connectors.
+
+### ChatGPT
+
+```
+chatgpt.com/plugins → + → Add custom MCP server
+Name: SocialTap
+Server URL: https://socialtap.dev/mcp
+Authentication: OAuth
+Create, install it, then pick it with @ in a chat.
+```
+
+([examples/chatgpt/steps.txt](examples/chatgpt/steps.txt))
+
+Sign in: choose OAuth when you add the server, and ChatGPT opens the sign-in. Custom MCP servers depend on your ChatGPT plan and workspace settings.
+
+### Grok and Grok Bot
+
+```
+grok.com: Connectors → New Connector → Custom
+Grok Bot: Connect apps → Add a custom connector → Remote HTTPS
+Name: SocialTap
+URL: https://socialtap.dev/mcp
+```
+
+([examples/grok-and-grok-bot/steps.txt](examples/grok-and-grok-bot/steps.txt))
+
+Sign in: sign in when the connector asks. Your browser opens.
+
+### Gemini CLI
+
+```shell
+gemini mcp add --transport http socialtap https://socialtap.dev/mcp
+```
+
+([examples/gemini-cli/add.sh](examples/gemini-cli/add.sh))
+
+```json
+{
+  "mcpServers": {
+    "socialtap": {
+      "httpUrl": "https://socialtap.dev/mcp"
+    }
+  }
+}
+```
+
+([examples/gemini-cli/settings.json](examples/gemini-cli/settings.json))
+
+Sign in: run `/mcp auth socialtap`.
+
+### Windsurf (Devin)
+
+```shell
+devin mcp add -s user socialtap https://socialtap.dev/mcp
+devin mcp login socialtap
+```
+
+([examples/windsurf-devin/add.sh](examples/windsurf-devin/add.sh))
+
+Sign in: `devin mcp login socialtap` opens your browser.
+
+### Cline
+
+```json
+{
+  "mcpServers": {
+    "socialtap": {
+      "type": "streamableHttp",
+      "url": "https://socialtap.dev/mcp?auth=required"
+    }
+  }
+}
+```
+
+([examples/cline/cline_mcp_settings.json](examples/cline/cline_mcp_settings.json))
+
+Sign in: click Authenticate on the server in Cline's MCP Servers view. Your browser opens.
+
+### VS Code
 
 ```json
 {
@@ -72,86 +190,21 @@ Continue, choose "Sign in now", then Add.
 
 ([examples/vs-code/mcp.json](examples/vs-code/mcp.json))
 
-### Codex
-
-```shell
-codex mcp add socialtap --url https://socialtap.dev/mcp
-codex mcp login socialtap
-```
-
-([examples/codex/add.sh](examples/codex/add.sh))
-
-### Codex (config.toml)
-
-```toml
-[mcp_servers.socialtap]
-url = "https://socialtap.dev/mcp"
-```
-
-([examples/codex/config.toml](examples/codex/config.toml))
-
-### ChatGPT
-
-```
-chatgpt.com/plugins → + → Add custom MCP server
-Name: SocialTap
-Server URL: https://socialtap.dev/mcp
-Authentication: OAuth
-Create, install it, then pick it with @ in a chat.
-```
-
-([examples/chatgpt/steps.txt](examples/chatgpt/steps.txt))
-
-### Gemini CLI
-
-```shell
-gemini mcp add --transport http socialtap https://socialtap.dev/mcp
-```
-
-([examples/gemini-cli/add.sh](examples/gemini-cli/add.sh))
-
-### Gemini CLI (settings.json)
-
-```json
-{
-  "mcpServers": {
-    "socialtap": {
-      "httpUrl": "https://socialtap.dev/mcp"
-    }
-  }
-}
-```
-
-([examples/gemini-cli/settings.json](examples/gemini-cli/settings.json))
-
-### Windsurf (Devin)
-
-```shell
-devin mcp add -s user socialtap https://socialtap.dev/mcp
-devin mcp login socialtap
-```
-
-([examples/windsurf-devin/add.sh](examples/windsurf-devin/add.sh))
+Sign in: your browser opens on the first connection.
 
 ### With an API key
 
 ```shell
-claude mcp add --transport http socialtap https://socialtap.dev/mcp \
-  --header "authorization: Bearer $SOCIALTAP_API_KEY"
+claude mcp add --transport http --scope user socialtap https://socialtap.dev/mcp \
+  --header "Authorization: Bearer $SOCIALTAP_API_KEY"
+
+codex mcp add socialtap --url https://socialtap.dev/mcp --bearer-token-env-var SOCIALTAP_API_KEY
+
+grok mcp add --transport http socialtap https://socialtap.dev/mcp \
+  --header 'Authorization: Bearer ${SOCIALTAP_API_KEY}'
 ```
 
 ([examples/with-an-api-key/add.sh](examples/with-an-api-key/add.sh))
-
-Then sign in once, in each client's own way:
-
-- **Claude Code**: run `/mcp`, pick `socialtap` and choose Authenticate. Until then its tools answer that you need to sign in.
-- **Claude Desktop and claude.ai**: choose Sign in now when you add the connector. On Team and Enterprise plans an owner adds it under Organization settings → Connectors (Add → Custom → Web), then each member clicks Connect under Customize → Connectors.
-- **Cursor**: sign in from the server's entry in Cursor Settings; your browser opens.
-- **VS Code**: your browser opens on the first connection.
-- **Codex**: run `codex mcp login socialtap`.
-- **ChatGPT**: choose OAuth when you add the server; ChatGPT opens the sign-in. Custom MCP servers depend on your ChatGPT plan and workspace settings.
-- **Gemini CLI**: run `/mcp auth socialtap`.
-- **Windsurf (Devin)**: run `devin mcp login socialtap`.
 
 ## Tools
 

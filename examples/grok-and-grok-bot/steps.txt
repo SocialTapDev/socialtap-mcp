@@ -1,0 +1,4 @@
+grok.com: Connectors → New Connector → Custom
+Grok Bot: Connect apps → Add a custom connector → Remote HTTPS
+Name: SocialTap
+URL: https://socialtap.dev/mcp
