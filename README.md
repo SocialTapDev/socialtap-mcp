@@ -164,7 +164,7 @@ What a client lists by default:
 | `list_posts` | The posts of a profile, a page per call: public posts (videos, reels, shorts, photos, carousels, tweets and text) with their author, text, media, and views, likes and comments. |
 | `get_profile` | Public accounts (creators, channels, pages, companies, communities) with their bio, links, and follower and post counts. |
 | `list_comments` | The comments of a post, a page per call: public comments and replies with their author, text, place in the thread, and like and reply counts. |
-| `get_transcript` | Timed transcripts of public videos: the platform's caption track, or speech-to-text on the audio when there is none. |
+| `get_transcript` | Timed transcripts of public videos: the platform's caption track, or speech-to-text on the audio when there is none and you ask for it. |
 | `get_engagement` | Engagement rate, average views, likes and comments, posting cadence and top post for an account, computed from its recent posts the same way on every platform. |
 | `search` | Search a platform by query for ads, advertisers, albums, channels, comments, communities, events, groups, hashtags, issues, jobs, places, playlists, podcasts, posts, products, profiles, repositories, sounds, suggestions or top. |
 | `call_endpoint` | Call any endpoint by the ID find_endpoint gives (tiktok.sound_posts), with the arguments it gives: the data the other tools here don't cover. |
@@ -270,6 +270,10 @@ Listed in the official MCP Registry as `dev.socialtap/mcp`: [server.json](server
 ## Without MCP
 
 The same data is a REST API with one key and one JSON schema: [socialtap.dev/apis](https://socialtap.dev/apis/).
+
+SDKs: [Go](https://github.com/SocialTapDev/socialtap-go) · [Python](https://github.com/SocialTapDev/socialtap-python) · [TypeScript](https://github.com/SocialTapDev/socialtap-node).
+
+Agent Skill for coding agents: [github.com/SocialTapDev/skills](https://github.com/SocialTapDev/skills).
 
 ---
 

@@ -3,7 +3,7 @@
   "name": "dev.socialtap/mcp",
   "title": "SocialTap",
   "description": "Social media scraper API. Live data from any public link.",
-  "version": "1.1799.0",
+  "version": "1.1805.0",
   "websiteUrl": "https://socialtap.dev/mcp/",
   "repository": {
     "url": "https://github.com/SocialTapDev/socialtap-mcp",
