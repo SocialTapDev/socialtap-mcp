@@ -1,5 +1,7 @@
 # SocialTap MCP Server
 
+[![SocialTap on Glama](https://glama.ai/mcp/connectors/dev.socialtap/mcp/badges/score.svg)](https://glama.ai/mcp/connectors/dev.socialtap/mcp)
+
 Live public social media data for Claude Code, Codex, Cursor, Grok, Claude, ChatGPT and any MCP client: posts, profiles, comments and transcripts from LinkedIn, Reddit, X (Twitter), Instagram, YouTube, TikTok, Facebook and 28 more platforms, read when your agent asks.
 
 - **Server URL:** `https://socialtap.dev/mcp` (remote, Streamable HTTP). Nothing to install or run.
@@ -217,13 +219,14 @@ What a client lists by default:
 | `list_posts` | The posts of a profile, a page per call: public posts (videos, reels, shorts, photos, carousels, tweets and text) with their author, text, media, and views, likes and comments. |
 | `get_profile` | Public accounts (creators, channels, pages, companies, communities) with their bio, links, and follower and post counts. |
 | `list_comments` | The comments of a post, a page per call: public comments and replies with their author, text, place in the thread, and like and reply counts. |
-| `get_transcript` | Timed transcripts of public videos: the platform's caption track, or speech-to-text on the audio when there is none and you ask for it. |
+| `get_transcript` | Timed transcripts of public videos: the platform's caption track, or speech-to-text on the audio when there is none. |
 | `get_engagement` | Engagement rate, average views, likes and comments, posting cadence and top post of an account, computed from recent posts the same way on every platform. |
 | `search` | Search a platform by query for ads, advertisers, albums, channels, comments, communities, events, groups, hashtags, issues, jobs, places, playlists, podcasts, posts, products, profiles, repositories, sounds, suggestions or top. |
 | `call_endpoint` | Call any endpoint by the ID find_endpoint gives (tiktok.sound_posts), with the arguments it gives: the data the other tools here don't cover. |
 | `search_docs` | Search the SocialTap docs (guides, the API reference, error codes, schemas, pricing) for a question or term: returns the best-matching sections with their page, a snippet and the path to read with read_doc. |
 | `read_doc` | Read one SocialTap docs page as Markdown: a path from search_docs or llms.txt (/docs/pagination/), or a full docs URL. |
 | `get_account` | Get the account, balance and calling key. |
+| `buy_credits` | Buy a credit pack (Stripe Checkout). |
 
 Add `?tools=all` to the server URL to list every tool, or name toolsets: `data`, `docs`, `jobs`, `account`, `all`.
 
@@ -235,7 +238,7 @@ Add `?tools=all` to the server URL to list every tool, or name toolsets: `data`,
 | [Reddit MCP](https://socialtap.dev/mcp/reddit/) | 10 | Posts, profiles, comments, transcripts and more |
 | [X (Twitter) MCP](https://socialtap.dev/mcp/x/) | 14 | Posts, profiles, comments, transcripts and more |
 | [Instagram MCP](https://socialtap.dev/mcp/instagram/) | 24 | Posts, profiles, comments, transcripts and more |
-| [YouTube MCP](https://socialtap.dev/mcp/youtube/) | 6 | Posts, profiles, comments, transcripts and more |
+| [YouTube MCP](https://socialtap.dev/mcp/youtube/) | 8 | Posts, profiles, comments, transcripts and more |
 | [TikTok MCP](https://socialtap.dev/mcp/tiktok/) | 28 | Posts, profiles, comments, transcripts and more |
 | [Facebook MCP](https://socialtap.dev/mcp/facebook/) | 20 | Posts, profiles, advertisers, comments and more |
 | [Threads MCP](https://socialtap.dev/mcp/threads/) | 5 | Posts, profiles and comments |
@@ -296,7 +299,9 @@ and reads a recorded answer like this one (long text and lists shortened):
     "metrics": {
       "comment_count": 242,
       "like_count": 1344
-    }
+    },
+    "approximate_fields": [],
+    "unknown_fields": []
   },
   "meta": {
     "platform": "linkedin",
@@ -319,6 +324,8 @@ A tool call costs what the same API request costs, from 1 credit. Failed request
 ## MCP Registry
 
 Listed in the official MCP Registry as `dev.socialtap/mcp`: [server.json](server.json).
+
+Also listed on [Glama](https://glama.ai/mcp/connectors/dev.socialtap/mcp) and [Raycast](https://www.raycast.com/raycast/model-context-protocol-registry).
 
 ## Without MCP
 
